@@ -1,10 +1,12 @@
+var path = require('path');
+
 module.exports = [
   {
     entry: {
       bundle: './client/src/index.js',
     },
     output: {
-      path: './client/dist',
+      path: path.resolve('./client/dist'),
       filename: '[name].js'
     },
     module: {
@@ -33,7 +35,7 @@ module.exports = [
       test: './test/client/index.js',
     },
     output: {
-      path: './client/dist',
+      path: path.resolve('./client/dist'),
       filename: '[name].js'
     },
     module: {
@@ -48,7 +50,7 @@ module.exports = [
               'transform-decorators-legacy',
             ],
           }
-        },      
+        },
       ],
     },
     externals: {
