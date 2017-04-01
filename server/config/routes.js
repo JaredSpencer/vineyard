@@ -27,7 +27,6 @@ export default function routes(app, express) {
   app.use('/api/signup', usersRouter);
   app.use('/api/user', usersRouter);
   app.use('/api/note', notesRouter);
-  app.use('/api/weather', weatherRoutes);
   app.use('/api/rooms', roomRouter);
   app.use('/api/messages', messageRouter);
   app.use('/api/organization', organizationsRouter)
@@ -37,6 +36,7 @@ export default function routes(app, express) {
 
   app.use('/auth', authRouter);
   app.use('/orgAuth/organization', organizationsRouter);
+  app.use('/weather', weatherRoutes);
 
   // === WILDCARD ROUTING ===
   app.use('*', (req, res, next) => {
