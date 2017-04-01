@@ -14,7 +14,7 @@ import axios from 'axios';
  */
 export function getWeather(note, noteCheck) {
   var cb = noteCheck ? setNoteWeather : setHomePageWeather;
-  return dispatch => axios.post('/api/weather/byLatLon', {
+  return dispatch => axios.post('/weather/byLatLon', {
     'lat': note.lat,
     'lon': note.lon
   }, { headers: { 'Authorization': 'JWT ' + localStorage.getItem('token') }
@@ -79,7 +79,7 @@ export function appendNoteFormItem(item, value) {
  * @description Initializes a post request to Weather API based on note's latitude and longitude.
  */
 export function postNote(note, weather) {
-  
+
   return dispatch => axios.post('/api/note', {
     title: note.title,
     text: note.textArea,
